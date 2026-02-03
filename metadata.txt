@@ -3,7 +3,7 @@ name=AdressesFr
 qgisMinimumVersion=2.14
 qgisMaximumVersion=3.98
 description= Recherche d'adresse BAN Eurométropole de Strasbourg
-version=1.1
+version=1.2
 author=Clément Zitouni
 email=clement.zitouni@strasbourg.eu
 about=Un plugin Qgis simplifié permmetant la recherche et la localisation d'addresses française grâce à la base d'addresses nationale (BAN)
@@ -11,6 +11,7 @@ tracker=https://github.com/cazitouni/AdressesFr/issues
 repository=https://github.com/cazitouni/AdressesFr
 changelog=version 1: Version initiale
           version 1.1: Fenêtre ontop
+          version 1.2: Changement d'url
 tags=ban, recherche, adresse, france,
 homepage=https://github.com/cazitouni/AdressesFr
 category=Plugins
