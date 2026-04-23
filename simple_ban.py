@@ -1,7 +1,6 @@
 import json
 import os.path
 
-from PyQt5.QtNetwork import QNetworkAccessManager, QNetworkRequest
 from qgis.core import (
     QgsCoordinateReferenceSystem,
     QgsCoordinateTransform,
@@ -11,6 +10,7 @@ from qgis.core import (
 from qgis.gui import QgsVertexMarker
 from qgis.PyQt.QtCore import QCoreApplication, QSettings, Qt, QTranslator, QUrl
 from qgis.PyQt.QtGui import QColor, QIcon, QPixmap
+from qgis.PyQt.QtNetwork import QNetworkAccessManager, QNetworkRequest
 from qgis.PyQt.QtWidgets import QAction, QCompleter, QErrorMessage, QSplashScreen
 
 from .resources import *
@@ -87,8 +87,10 @@ class AdressesFr:
         self.dlg.rejected.connect(self.deleteMarker)
         self.manager = QNetworkAccessManager()
         self.completer = QCompleter(["", "", "", "", ""])
-        self.completer.setCompletionMode(QCompleter.UnfilteredPopupCompletion)
-        self.completer.setCaseSensitivity(Qt.CaseInsensitive)
+        self.completer.setCompletionMode(
+            QCompleter.CompletionMode.UnfilteredPopupCompletion
+        )
+        self.completer.setCaseSensitivity(Qt.CaseSensitivity.CaseInsensitive)
         self.completer.setMaxVisibleItems(5)
         self.dlg.barre.setCompleter(self.completer)
         self.model = self.completer.model()
